@@ -14,35 +14,34 @@
 
   {{!-- see how these aren't DRY? DRY=Don't repeat yourself. IRL we'd use components
   and handlebars templates --}}
+
+  <div>
+    Read all:
+    <ul>
+      {{#each model as |game|}}
+        <li>{{game.title}}, id {{game.id}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div>
+    <button {{action 'readBoardGame'}}>Read Board Game 1</button>: {{singleGameName}}
+  </div>
+
   <div>
   	{{input value=newBoardGame placeholder="board game name"}}
-    <button {{action 'saveNewBoardGame'}}>Create</button>
+    <button {{action 'createBoardGame'}}>Create</button>
+  </div>
+  <div>
+  	{{input value=updatedTitle placeholder="new name for board game 1"}}
+    <button {{action 'updateBoardGame'}}>Update</button>
   </div>
 
   <div>
-    <button {{action 'getBoardGames'}}>Read All</button>
-  </div>
-
-  <div>
-  	{{input value=boardGameId placeholder="id of game to view"}}
-    <button {{action 'getBoardGame'}}>Read One</button>
-  </div>
-
-  <div>
-  	{{input value=boardGameToUpdate placeholder="id of game to edit"}}
-    <button {{action 'editBoardGame'}}>Update</button>
-  </div>
-
-  <div>
-  	{{input value=boardGameToUpdate placeholder="id of game to edit"}}
+  	{{input value=destroyId placeholder="id of game to delete"}}
     <button {{action 'destroyBoardGame'}}>Delete</button>
   </div>
 
-  {{!-- Don't delete outlet. This is where child routes would render in a
-  real app. Just leave it there. It doesn't hurt anything to have it there
-  and not use it, but it sucks if you forgot you deleted it.
-   --}}
-  {{outlet}}
 </div>
 
 <footer>

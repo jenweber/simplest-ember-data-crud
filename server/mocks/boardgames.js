@@ -4,12 +4,30 @@
 module.exports = function(app) {
   const express = require('express');
   let boardgamesRouter = express.Router();
-  let idCounter = 0;
+  let idCounter = 2;
 
   boardgamesRouter.get('/', function(req, res) {
     res.send({
-      'boardgames': []
+      data: [
+        {
+          id: 1,
+          attributes:
+          {
+            title: "Castle Ravenloft",
+          },
+          type: "boardgames"
+        },
+        {
+          id: 2,
+          attributes:
+          {
+            title: "Dragoon",
+          },
+          type: "boardgames"
+        },
+      ]
     });
+    res.status(200).end();
   });
 
   boardgamesRouter.post('/', function(req, res) {
@@ -17,12 +35,12 @@ module.exports = function(app) {
     idCounter += 1
     res.send({
       data: {
+        id: idCounter,
         attributes:
         {
-          name: req.body.data.attributes.name,
-          id: idCounter
+          title: req.body.data.attributes.title,
         },
-        type: "boardgames"
+        type: "boardgame"
       }
     })
     res.status(201).end();
@@ -30,16 +48,28 @@ module.exports = function(app) {
 
   boardgamesRouter.get('/:id', function(req, res) {
     res.send({
-      'boardgames': {
-        id: req.params.id
+      data: {
+        id: 1,
+        attributes:
+        {
+          title: "Castle Ravenloft",
+        },
+        type: "boardgames"
       }
     });
+    res.status(200).end();
   });
 
-  boardgamesRouter.put('/:id', function(req, res) {
+  boardgamesRouter.patch('/:id', function(req, res) {
+    console.log('PATCH')
     res.send({
-      'boardgames': {
-        id: req.params.id
+      data: {
+        id: req.body.data.id,
+        attributes:
+        {
+          title: req.body.data.attributes.title,
+        },
+        type: "boardgame"
       }
     });
   });
@@ -57,6 +87,6 @@ module.exports = function(app) {
   // After installing, you need to `use` the body-parser for
   // this mock uncommenting the following line:
   //
-  app.use('/api/boardgames', require('body-parser').json({ type: 'application/*+json' }), boardgamesRouter);
+  app.use('/boardgames', require('body-parser').json({ type: 'application/*+json' }), boardgamesRouter);
   // app.use('/api/boardgames', boardgamesRouter);
 };

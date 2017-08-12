@@ -16,6 +16,10 @@ input, button {
   padding: 5px;
 }
 
+input {
+  min-width: 300px;
+}
+
 button {
   border-radius: 3px;
   background-color: white;
