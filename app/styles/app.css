@@ -1,0 +1,23 @@
+html, body {
+  font-family: sans-serif;
+  height: 100%
+}
+
+div {
+  margin: 10px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+input, button {
+  font-size: 18px;
+  padding: 5px;
+}
+
+button {
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid coral;
+}

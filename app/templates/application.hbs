@@ -1,5 +1,50 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="content">
+  <h1>Minimal CRUD with Ember Data</h1>
+  <p>
+    Demonstrating a minimal implementation of Creating, Reading, Updating, and
+    Deleting records using Ember Data.
+    In a "Real App," you would have lots of routes, components, and models that would
+    handle the functionality, instead of putting the code in application-level
+    files like I did here, but let's stick to the bare bones.
+  </p>
+  <p>
+    To learn best practice for application structure, try out the Ember Super Rentals
+    Tutorial and read the Ember Guides.
+  </p>
 
-{{outlet}}
+  {{!-- see how these aren't DRY? DRY=Don't repeat yourself. IRL we'd use components
+  and handlebars templates --}}
+  <div>
+  	{{input value=newBoardGame placeholder="board game name"}}
+    <button {{action 'saveNewBoardGame'}}>Create</button>
+  </div>
+
+  <div>
+    <button {{action 'getBoardGames'}}>Read All</button>
+  </div>
+
+  <div>
+  	{{input value=boardGameId placeholder="id of game to view"}}
+    <button {{action 'getBoardGame'}}>Read One</button>
+  </div>
+
+  <div>
+  	{{input value=boardGameToUpdate placeholder="id of game to edit"}}
+    <button {{action 'editBoardGame'}}>Update</button>
+  </div>
+
+  <div>
+  	{{input value=boardGameToUpdate placeholder="id of game to edit"}}
+    <button {{action 'destroyBoardGame'}}>Delete</button>
+  </div>
+
+  {{!-- Don't delete outlet. This is where child routes would render in a
+  real app. Just leave it there. It doesn't hurt anything to have it there
+  and not use it, but it sucks if you forgot you deleted it.
+   --}}
+  {{outlet}}
+</div>
+
+<footer>
+  made with &#x2764; in Ember by Jen Weber
+</footer>
