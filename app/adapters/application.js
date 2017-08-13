@@ -4,6 +4,7 @@ import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
   // host: 'http://api-for-simplest-ember-data-crud.com',
+  namespace: 'api' // a way for me to use http-mock
 
   // ^^^^ this is where you put the URL to your API.
   // This is not a real API endpoint so I am leaving it commented out.

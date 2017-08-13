@@ -87,6 +87,6 @@ module.exports = function(app) {
   // After installing, you need to `use` the body-parser for
   // this mock uncommenting the following line:
   //
-  app.use('/boardgames', require('body-parser').json({ type: 'application/*+json' }), boardgamesRouter);
+  app.use('/api/boardgames', require('body-parser').json({ type: 'application/*+json' }), boardgamesRouter);
   // app.use('/api/boardgames', boardgamesRouter);
 };
