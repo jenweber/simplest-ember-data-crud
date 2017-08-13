@@ -1,7 +1,7 @@
 {
-  "name": "most-minimal-ember-app-ever",
+  "name": "simplest-ember-data-crud",
   "version": "0.0.0",
-  "description": "Small description for most-minimal-ember-app-ever goes here",
+  "description": "Small description for simplest-ember-data-crud goes here",
   "license": "MIT",
   "author": "",
   "directories": {

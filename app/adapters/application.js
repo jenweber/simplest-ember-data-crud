@@ -3,7 +3,7 @@ import DS from 'ember-data';
 // Create this file with `ember g adapter application`
 
 export default DS.JSONAPIAdapter.extend({
-  // host: 'http://api-for-most-minimal-ember-app-ever.com',
+  // host: 'http://api-for-simplest-ember-data-crud.com',
 
   // ^^^^ this is where you put the URL to your API.
   // This is not a real API endpoint so I am leaving it commented out.

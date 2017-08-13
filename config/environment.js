@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'most-minimal-ember-app-ever',
+    modulePrefix: 'simplest-ember-data-crud',
     environment,
     rootURL: '/',
     locationType: 'auto',

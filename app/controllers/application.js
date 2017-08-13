@@ -4,7 +4,6 @@ import Ember from 'ember';
 // when a user clicks a button to create/read/edit/delete a record
 
 export default Ember.Controller.extend({
-  singleGame: null,
   actions: {
     createBoardGame() {
       // get the input value from the .hbs template
@@ -21,8 +20,7 @@ export default Ember.Controller.extend({
       let id = this.get('boardGameId')
       // find the record (cheating and using id 1 from my mocked server)
       this.store.findRecord('boardgame', 1).then((game) => {
-        // statically set a variable on my template
-        this.set('singleGameName', game.get('title'))
+        alert(game.get('title') + ' ' + game.get('id'))
       })
     },
     updateBoardGame() {
