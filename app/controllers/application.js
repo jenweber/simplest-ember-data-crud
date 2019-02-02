@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
 // a controller is a place to define 'actions', such as the things that should happen
 // when a user clicks a button to create/read/edit/delete a record
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   actions: {
     createBoardGame() {
       // get the input value from the .hbs template
